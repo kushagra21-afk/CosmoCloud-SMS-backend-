@@ -7,15 +7,12 @@ from bson import ObjectId
 from dotenv import load_dotenv
 from fastapi.encoders import jsonable_encoder
 
-# Load environment variables from .env file
 load_dotenv()
 
 app = FastAPI()
 
-# Get MongoDB URI from environment variable
 MONGO_URI = os.getenv("MONGO_URI")
 
-# Ensure MongoDB URI is present in the environment
 if not MONGO_URI:
     raise ValueError("MongoDB URI is not set in the environment variables.")
 
